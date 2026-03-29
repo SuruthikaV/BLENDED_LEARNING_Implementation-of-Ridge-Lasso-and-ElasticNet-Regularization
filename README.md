@@ -55,15 +55,12 @@ for name,model in models.items():
     pipeline = Pipeline([('poly',PolynomialFeatures(degree=2)),
     ('regressor',model)
     ])
-
-pipeline.fit(x_train, y_train)
-predictions = pipeline.predict(x_test)
-
-mse = mean_squared_error(y_test, predictions)
-mae = mean_absolute_error(y_test, predictions)
-r2 = r2_score(y_test, predictions)
-
-result[name] = {'MSE': mse, 'R² Score': r2}
+    pipeline.fit(x_train, y_train)
+    predictions = pipeline.predict(x_test)
+    mse = mean_squared_error(y_test, predictions)
+    mae = mean_absolute_error(y_test, predictions)
+    r2 = r2_score(y_test, predictions)
+    result[name] = {'MSE': mse, 'R² Score': r2}
 print('Name: SURUTHIKA V')
 print('Reg. No: 212225040441')
 for model_name, metrics in result.items():
@@ -92,12 +89,9 @@ plt.show()
 ```
 
 ## Output:
-<img width="592" height="87" alt="image" src="https://github.com/user-attachments/assets/5922a83c-750e-4ccd-832f-a155f80fc406" />
-<img width="471" height="682" alt="image" src="https://github.com/user-attachments/assets/2a34c5fe-1b1e-43b0-a4b9-5cfec41a61f6" />
-<img width="437" height="664" alt="image" src="https://github.com/user-attachments/assets/c2258a93-68d1-4e79-bea5-866effff9357" />
-<img width="430" height="49" alt="image" src="https://github.com/user-attachments/assets/efaa1e72-715a-4806-ba8a-cda5f6d22f23" />
-
-
+<img width="819" height="187" alt="Screenshot 2026-03-29 103039" src="https://github.com/user-attachments/assets/ec56059d-d8a6-4b0e-a727-4b9d8a7a8328" />
+<img width="853" height="771" alt="Screenshot 2026-03-29 103055" src="https://github.com/user-attachments/assets/f2cc5321-d796-4b1b-b73d-f4f9c7dd388a" />
+<img width="569" height="672" alt="image" src="https://github.com/user-attachments/assets/c3d8bc0a-1989-4d91-a44c-5129f6218889" />
 
 ## Result:
 Thus, Ridge, Lasso, and ElasticNet regularization models were implemented successfully to predict the car price and the model's performance was evaluated using R² score and Mean Squared Error.
