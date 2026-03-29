@@ -34,10 +34,6 @@ data = pd.get_dummies(data, drop_first=True)
 x=data.drop('price',axis=1)
 y=data['price']
 
-data = pd.get_dummies(data, drop_first=True)
-x=data.drop('price',axis=1)
-y=data['price']
-
 scaler = StandardScaler()
 x = scaler.fit_transform(x)
 y = scaler.fit_transform(y.values.reshape(-1, 1))
